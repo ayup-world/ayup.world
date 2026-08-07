@@ -1,0 +1,12 @@
+{
+  "name": "ayup-world-website",
+  "private": true,
+  "scripts": {
+    "build:css": "sass css/scss/styles.scss css/styles.css",
+    "watch:css": "sass --watch --poll css/scss/styles.scss css/styles.css",
+    "dev": "npm run watch:css"
+  },
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}

@@ -1,0 +1,199 @@
+:root {
+  --font: monospace;
+  --color-text: rgb(171, 178, 191);
+  --color-background: rgb(21, 24, 28);
+  --color-card-background: #565656;
+  --color-card-content-background: rgb(40, 44, 52);
+  --color-code-background: rgb(40, 44, 52);
+  --color-code-text: rgb(171, 178, 191);
+  --card-shadow: rgba(9, 30, 66, .25) 0 4px 8px -2px, rgba(9, 30, 66, .08) 0 0 0 1px;
+  --card-padding: 1px;
+  --card-content-radius: 6px;
+}
+
+:root {
+  --gradient-radinbox: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff0000,
+          #ff9900,
+          #ffff00,
+          #00ff88,
+          #00aaff,
+          #6633ff,
+          #ff00cc,
+          #ff0000);
+  --gradient-neon-cyberpunk: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff00cc,
+          #7b2cff,
+          #00d9ff,
+          #00ffb3,
+          #ff00cc);
+  --gradient-sunset: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff3d00,
+          #ff8a00,
+          #ffd000,
+          #ff4f81,
+          #b52cff,
+          #ff3d00);
+  --gradient-aurora: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #00ff87,
+          #00e5ff,
+          #0077ff,
+          #7c4dff,
+          #00ffa3,
+          #00ff87);
+  --gradient-electric-blue: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #001eff,
+          #006eff,
+          #00c8ff,
+          #00fff0,
+          #7b61ff,
+          #001eff);
+  --gradient-lava: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #5c0000,
+          #d40000,
+          #ff5200,
+          #ffb000,
+          #fff066,
+          #ff5200,
+          #5c0000);
+  --gradient-candy: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff6ec7,
+          #ff9de2,
+          #a66cff,
+          #62dfff,
+          #70ffcb,
+          #ffe66d,
+          #ff6ec7);
+  --gradient-deep-space: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #000000,
+          #1a1a1a,
+          #333333,
+          #4d4d4d,
+          #666666,
+          #808080,
+          #999999,
+          #b3b3b3,
+          #cccccc,
+          #e6e6e6,
+          #ffffff);
+  --gradient-toxic: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #00ff38,
+          #b6ff00,
+          #fff500,
+          #00ff88,
+          #00c853,
+          #00ff38);
+  --gradient-fir-ice: conic-gradient(at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #00c6ff,
+          #0066ff,
+          #743cff,
+          #ff245f,
+          #ff4d00,
+          #ffcc00,
+          #00c6ff);
+  --gradient-iridescent: conic-gradient(from 25deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff5ea8 0deg,
+          #9c6cff 45deg,
+          #54e6ff 90deg,
+          #8affc1 135deg,
+          #fff17a 175deg,
+          #ff9a5c 215deg,
+          #ff69d4 255deg,
+          #746cff 300deg,
+          #5ce8ff 330deg,
+          #ff5ea8 360deg);
+  --gradient-prismatic: conic-gradient(from 45deg at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          #ff006e 0deg 35deg,
+          #8338ec 35deg 80deg,
+          #3a86ff 80deg 145deg,
+          #00f5d4 145deg 195deg,
+          #fee440 195deg 235deg,
+          #fb5607 235deg 300deg,
+          #ff006e 300deg 360deg);
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font);
+}
+
+.card {
+  padding: var(--card-padding);
+  background: var(--color-card-background);
+  box-shadow: var(--card-shadow);
+  border-radius: calc(var(--card-content-radius) + var(--card-padding));
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #8c8c8c;
+  mask-image: radial-gradient(50% 50% at var(--mouse-x, 9999px) var(--mouse-y, 9999px), rgba(0, 0, 0, 0.5019607843) 40%, transparent);
+  background: var(--gradient-neon-cyberpunk);
+}
+.card .card-content {
+  background: var(--color-card-content-background);
+  border-radius: var(--card-content-radius);
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.code pre {
+  display: block;
+  overflow-x: auto;
+  margin: 0;
+  color: var(--color-code-text);
+}
+.code code {
+  white-space: pre;
+}
+.code .keyword {
+  color: #c678dd;
+}
+.code .title {
+  color: #61aeee;
+}
+.code .built_in {
+  color: #e6c07b;
+}
+.code .string {
+  color: #98c379;
+}
+
+.holding-page {
+  padding: 1rem;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.holding-page .content {
+  max-width: 800px;
+  display: grid;
+  gap: 1rem;
+}
+
+.link-button {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #000;
+  border-radius: 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.link-button .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,30 @@
+.code {
+    pre {
+        display: block;
+        overflow-x: auto;
+        //padding: 2rem;
+        margin: 0;
+        color: var(--color-code-text);
+        //background: var(--color-code-background);
+    }
+
+    code {
+        white-space: pre;
+    }
+
+    .keyword {
+        color: #c678dd;
+    }
+
+    .title {
+        color: #61aeee;
+    }
+
+    .built_in {
+        color: #e6c07b;
+    }
+
+    .string {
+        color: #98c379;
+    }
+}
